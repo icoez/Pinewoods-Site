@@ -1,114 +1,131 @@
-*, *::before, *::after{
-    box-sizing: border-box;
-    margin: 0px;
-    font-family: 'Montserrat', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.1s ease-in-out;
+}
+p {
+  color: #fff;
+}
+a:hover {
+  color: antiquewhite;
+}
+header {
+  background-color: rgba(12, 71, 54, 1);
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+h1 {
+  color: #fff;
+}
+.desktop-nav {
+  display: flex;
+  list-style-type: none;
+}
+.desktop-nav > a {
+  padding: 15px;
+}
 
+.hamburger {
+  display: none;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
 }
-a{
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.1s ease-in-out;
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
-a:hover{
-    color: antiquewhite;
+.hamburger.is-active .bar {
+  opacity: 0;
 }
-header{
-    background-color: rgba(12,71,54,1);
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 30px;
-
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-8px, -5px);
 }
-.navbar-title{
-    color:#fff;
+.hamburger .bar,
+.hamburger::after,
+.hamburger::before {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 7px 0px;
+  content: "";
+  display: block;
+  transition: all 0.2s ease-in-out;
 }
-.desktop-nav{
-    display: flex;
-    list-style-type: none;
+.mobile-nav {
+  width: 100%;
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px 33px;
+  background-color: rgba(12, 71, 54, 1);
+  transition: all 0.2s ease-in-out;
+  position: fixed;
 }
-.desktop-nav > a{
-    padding: 15px;
+.mobile-nav > a {
+  margin-bottom: 12px;
 }
-
-.hamburger{
-    display: none;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    appearance: none;
-    background: none;
-    outline: none;
-    border: none;
+.mobile-nav.is-active {
+  opacity: 100;
 }
-.hamburger.is-active:before{
-    transform: rotate(-45deg) translate(-9px, 6px);
+.pinewoods-sign {
+  z-index: -1;
+  filter: blur(3px);
+  position: absolute;
+  width: 100%;
 }
-.hamburger.is-active .bar{
-    opacity: 0;
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-.hamburger.is-active:after{
-    transform: rotate(45deg) translate(-8px, -5px);
+.main-left,
+.main-right {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.hamburger .bar, .hamburger::after, .hamburger::before{
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 7px 0px;
-    content: '';
+.main-left > div,
+.main-right > div {
+  background-color: rgba(12, 71, 54, 1);
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+.weather-title {
+  padding-bottom: 10px;
+}
+@media (max-width: 1200px) {
+  .hamburger {
     display: block;
-    transition: all 0.2s ease-in-out;
-}
-.mobile-nav{
-    width: 100%;
-    opacity: 0;
+  }
+  .desktop-nav {
     display: none;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 0px 30px;
-    background-color: rgba(12,71,54,1);
-    transition: all 0.2s ease-in-out;
-    position: fixed;
-}
-.mobile-nav > a{
-    margin: 5px 0px;
-}
-.mobile-nav.is-active{
-    opacity: 100;
-}
-.pinewoods-sign{
-    z-index: -1;
-    filter: blur(3px);
-    position: absolute;
-    width: 100%;
-}
-.main{
-    margin-top: 30px;
+  }
+  .mobile-nav {
     display: flex;
+  }
+  .pinewoods-sign {
+    height: 100%;
+  }
+  .text-container {
+    width: 80%;
+  }
+  .main {
     flex-direction: column;
-    align-items: center;
-}
-.text-container{
-    background-color: white;
-    width: 70%;
-    border-radius: 7px;
-    padding: 20px;
-}
-@media (max-width:830px){
-    .hamburger{
-        display: block;
-    }
-    .desktop-nav{
-        display:none;
-    }
-    .mobile-nav{
-        display: flex;
-    }
-    .pinewoods-sign{
-        height: 100%;
-    }
-    .text-container{
-        width: 80%;
-    }
+  }
 }
