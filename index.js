@@ -30,7 +30,8 @@ fetch(
     $(weatherTitle).text(
       `Weather - ${(Math.round(currentTempValue * 10) / 10).toString()} ℉`
     );
-    let date = new Date(data["list"][0]["dt_txt"]);
+    //Multiply by 1000 to get JS timestamp in milliseconds
+    let date = new Date(data["list"][0]["dt"] * 1000);
     let currentDay = date.getDay();
     $(".day1").text(daysArray[currentDay]);
     $(".day2").text(daysArray[currentDay + 1]);
