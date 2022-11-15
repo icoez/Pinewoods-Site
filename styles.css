@@ -75,7 +75,7 @@ h2 {
   padding: 0px 33px;
   background-color: rgba(12, 71, 54, 1);
   transition: all 0.2s ease-in-out;
-  position: fixed;
+  position: absolute;
 }
 .mobile-nav > a {
   margin-bottom: 12px;
