@@ -92,11 +92,11 @@ h2 {
 .main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .main-left,
 .main-right {
-  padding: 40px 40px;
+  padding: 20px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,13 +105,15 @@ h2 {
 .main-right > div {
   background-color: rgba(12, 71, 54, 1);
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 13px;
 }
 .days {
   display: flex;
 }
-.days > div {
+.days > div:not(.d4) {
   padding-right: 30px;
+}
+.days > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,7 +124,12 @@ h2 {
 .days > div > img {
   width: 70px;
 }
-@media (max-width: 1200px) {
+.contacts-container > p {
+  padding: 12px 0px;
+}
+
+@media screen and (max-width: 991px) {
+  /*Large tablet styles*/
   .hamburger {
     display: block;
   }
@@ -138,6 +145,13 @@ h2 {
   .text-container {
     width: 80%;
   }
+  .main {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*Medium tablet/phone styles*/
   .main {
     flex-direction: column;
   }

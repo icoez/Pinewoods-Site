@@ -159,7 +159,7 @@ fetch(
     for (let i = 0; i < 4; i++) {
       $(`.min-${i + 1}`).text(`Min - ${Math.round(minArray[i] * 10) / 10} ℉`);
       $(`.max-${i + 1}`).text(`Max - ${Math.round(maxArray[i] * 10) / 10} ℉`);
-      $(`.wind-${i + 1}`).text(`Avg. wind - ${windArray[i]} mph`);
+      $(`.wind-${i + 1}`).text(`Wind - ${windArray[i]} mph`);
     }
   });
 function getModalElement(arr) {
