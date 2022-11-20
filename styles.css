@@ -10,8 +10,10 @@ a {
   color: #fff;
   transition: all 0.1s ease-in-out;
 }
-p {
+p,
+li {
   color: #fff;
+  line-height: 1.35rem;
 }
 a:hover {
   color: antiquewhite;
@@ -27,6 +29,17 @@ header {
 h1,
 h2 {
   color: #fff;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: white;
+  margin: 2px 0px;
+}
+th,
+td {
+  padding: 4px;
+  border: 1px solid;
 }
 .desktop-nav {
   display: flex;
@@ -93,6 +106,9 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-size: cover;
+  background-position: center;
+  background-image: url("Assets/Images/PinewoodsDroneGif.gif");
 }
 .main-left,
 .main-right {
@@ -102,10 +118,12 @@ h2 {
   align-items: center;
 }
 .main-left > div,
-.main-right > div {
+.main-right > div,
+.archives > div {
   background-color: rgba(12, 71, 54, 1);
   padding: 10px 20px;
   border-radius: 13px;
+  box-shadow: 3px 3px 16px black;
 }
 .days {
   display: flex;
@@ -118,18 +136,76 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
-.weather-title {
+.weather-title,
+.dining-hall > h1 {
   padding-bottom: 13px;
 }
+
 .days > div > img {
   width: 70px;
 }
 .contacts-container > p {
   padding: 12px 0px;
 }
-
+.email-anchor,
+.archives a {
+  text-decoration: underline;
+}
+.dining-hall {
+  background-color: rgba(12, 71, 54, 1);
+  padding: 10px 20px;
+  height: 100%;
+  /* background-image: url("Assets/Images/PinewoodsSign.jpeg");
+  background-position: center;
+  background-size: cover; */
+}
+.dining-hall-subtitles {
+  display: flex;
+  justify-content: space-between;
+}
+.dining-hall-subtitles > div {
+  width: 100%;
+  margin: 5px 0px;
+}
+.dining-hall-list {
+  color: white;
+  padding: 10px 20px;
+}
+.dining-hall-list li {
+  padding-bottom: 5px;
+}
+.dining-hall-table {
+  color: white;
+  padding: 10px 0px;
+}
+.dining-hall-preface {
+  padding-top: 10px;
+}
+.meal-services-postface {
+  padding-bottom: 10px;
+}
+.archives {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 12px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("Assets/Images/VerticalBoat.jpg");
+}
+.archives > div > p {
+  margin: 4px 0px;
+}
+.pinewords-flex {
+  display: flex;
+}
+.pinewords-left {
+  margin-right: 12px;
+}
 @media screen and (max-width: 991px) {
   /*Large tablet styles*/
+  .days > div:not(.d4) {
+    padding-right: 68px;
+  }
   .hamburger {
     display: block;
   }
@@ -139,14 +215,19 @@ h2 {
   .mobile-nav {
     display: flex;
   }
-  .pinewoods-sign {
-    height: 100%;
-  }
   .text-container {
     width: 80%;
   }
   .main {
     flex-direction: column;
+  }
+
+  .archives {
+    flex-direction: column;
+    align-items: center;
+  }
+  .archives > div:not(.dining-hall-archive) {
+    margin-bottom: 20px;
   }
 }
 
@@ -154,9 +235,19 @@ h2 {
   /*Medium tablet/phone styles*/
   .main {
     flex-direction: column;
+    background-image: url("Assets/Images/DroneShoreline2.jpg");
   }
   .days {
     flex-direction: column;
+  }
+  .dining-hall-subtitles {
+    flex-direction: column;
+  }
+  .dining-hall-subtitles > div {
+    width: 100%;
+  }
+  .pinewoods-sign {
+    height: 100%;
   }
   .days > div {
     padding: 0px 68px;

@@ -114,7 +114,7 @@ fetch(
       windArray[3] += day4CurrentWind;
     }
     for (let i = 0; i < 4; i++) {
-      windArray[i] = Math.round((windArray[i] / 8) * 10) / 10;
+      windArray[i] = Math.round(windArray[i] / 8);
       let modalIcon = getModalElement(iconArray[i]);
       let imgSelector;
       if (i == 0) {
@@ -157,8 +157,8 @@ fetch(
       }
     }
     for (let i = 0; i < 4; i++) {
-      $(`.min-${i + 1}`).text(`Min - ${Math.round(minArray[i] * 10) / 10} ℉`);
-      $(`.max-${i + 1}`).text(`Max - ${Math.round(maxArray[i] * 10) / 10} ℉`);
+      $(`.min-${i + 1}`).text(`Min - ${Math.round(minArray[i])} ℉`);
+      $(`.max-${i + 1}`).text(`Max - ${Math.round(maxArray[i])} ℉`);
       $(`.wind-${i + 1}`).text(`Wind - ${windArray[i]} mph`);
     }
   });
