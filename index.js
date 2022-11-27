@@ -17,6 +17,18 @@ window.onload = function () {
     $(menuButton).toggleClass("is-active");
     $(mobileNav).toggleClass("is-active");
   });
+
+  const popup = $(".popup");
+  popup.click(function () {
+    let selectShowed = false;
+    if ($(this).find("div:first").hasClass("show")) {
+      selectShowed = true;
+    }
+    $(".popup-content").removeClass("show");
+    if (!selectShowed) {
+      $(this).find("div:first").toggleClass("show");
+    }
+  });
 };
 let weatherTemp = $(".temp");
 let weatherTitle = $(".weather-title");

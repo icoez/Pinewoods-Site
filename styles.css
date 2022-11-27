@@ -5,7 +5,8 @@
   margin: 0px;
   font-family: "Montserrat", sans-serif;
 }
-a {
+a,
+.popup {
   text-decoration: none;
   color: #fff;
   transition: all 0.1s ease-in-out;
@@ -15,7 +16,8 @@ li {
   color: #fff;
   line-height: 1.35rem;
 }
-a:hover {
+a:hover,
+.popup:hover {
   color: antiquewhite;
 }
 header {
@@ -192,7 +194,9 @@ td {
   background-position: center;
   background-image: url("Assets/Images/VerticalBoat.jpg");
 }
-.archives > div > p {
+
+.archives > div > p,
+.archives > div > div {
   margin: 4px 0px;
 }
 .pinewords-flex {
@@ -200,6 +204,39 @@ td {
 }
 .pinewords-left {
   margin-right: 12px;
+}
+.popup {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.popup .popup-content {
+  display: none;
+  background-color: #072b20;
+  color: white;
+  border-radius: 6px;
+  padding: 12px 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  justify-content: space-around;
+}
+.popup .popup-content > a {
+  margin-bottom: 4px;
+}
+.popup-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 8%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #072b20 transparent transparent transparent;
+}
+.popup .show {
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 991px) {
   /*Large tablet styles*/
